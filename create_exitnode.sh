@@ -42,7 +42,7 @@ DEBIAN_FRONTEND=noninteractive apt-get update
 
 if [ "$release_name" = '"Ubuntu"' ]; then
   DEBIAN_FRONTEND=noninteractive apt-get install -yq --force-yes \
-      "linux-image-extra-$(uname -r)"
+      "linux-modules-extra-$(uname -r)"
 fi 
 
 DEBIAN_FRONTEND=noninteractive apt-get install -yq --force-yes \
@@ -71,7 +71,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install -yq --force-yes \
   libevent-dev \
   ebtables \
   vim \
-  iproute \
+  iproute2 \
   bridge-utils \
   libnetfilter-conntrack-dev \
   libnfnetlink-dev \
