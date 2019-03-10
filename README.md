@@ -21,7 +21,7 @@ Get access to a server (e.g. on digitalocean or some other place) running Ubuntu
 1) Copy the `create_exitnode.sh` script onto your soon-to-be-exitnode server:
 
 ```
-scp create_exitnode.sh <user>@<exitnode-ip>
+scp create_exitnode.sh <user>@<exitnode-ip>:~
 ```
 
 2) Log into the server:
