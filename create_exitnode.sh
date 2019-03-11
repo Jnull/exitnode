@@ -41,11 +41,11 @@ echo "release_name=[$release_name]"
 DEBIAN_FRONTEND=noninteractive apt-get update
 
 if [ "$release_name" = '"Ubuntu"' ]; then
-  DEBIAN_FRONTEND=noninteractive apt-get install -yq --force-yes \
+  DEBIAN_FRONTEND=noninteractive apt-get install -yq --allow-downgrades --allow-remove-essential --allow-change-held-packages \
       "linux-modules-extra-$(uname -r)"
 fi 
 
-DEBIAN_FRONTEND=noninteractive apt-get install -yq --force-yes \
+DEBIAN_FRONTEND=noninteractive apt-get install -yq --allow-downgrades --allow-remove-essential --allow-change-held-packages \
   build-essential \
   ca-certificates \
   curl \
@@ -80,7 +80,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install -yq --force-yes \
   tmux \
   netcat-openbsd
 
-DEBIAN_FRONTEND=noninteractive apt-get install -yq --force-yes \
+DEBIAN_FRONTEND=noninteractive apt-get install -yq --allow-downgrades --allow-remove-essential --allow-change-held-packages \
   cmake \
   libnl-3-dev \
   libnl-genl-3-dev \
