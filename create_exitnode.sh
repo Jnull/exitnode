@@ -66,7 +66,6 @@ DEBIAN_FRONTEND=noninteractive apt-get install -yq --allow-downgrades --allow-re
   python \
   python-dev \
   python-pip \
-  easy_install \
   libnetfilter-conntrack3 \
   libevent-dev \
   ebtables \
@@ -113,7 +112,7 @@ do
 done
 
 # see https://askubuntu.com/questions/561377/pip-wont-run-throws-errors-instead
-easy_install -U pip
+# easy_install -U pip #leaving here for future dev, i don't think Ubuntu 18.04 needs this though. 
 
 pip install netfilter
 pip install virtualenv
