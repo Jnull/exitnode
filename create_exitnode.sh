@@ -66,6 +66,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install -yq --allow-downgrades --allow-re
   python \
   python-dev \
   python-pip \
+  easy_install \
   libnetfilter-conntrack3 \
   libevent-dev \
   ebtables \
