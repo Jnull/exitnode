@@ -41,11 +41,11 @@ echo "release_name=[$release_name]"
 DEBIAN_FRONTEND=noninteractive apt-get update
 
 if [ "$release_name" = '"Ubuntu"' ]; then
-  DEBIAN_FRONTEND=noninteractive apt-get install -yq --force-yes \
-      "linux-image-extra-$(uname -r)"
+  DEBIAN_FRONTEND=noninteractive apt-get install -yq --allow-downgrades --allow-remove-essential --allow-change-held-packages \
+      "linux-modules-extra-$(uname -r)"
 fi 
 
-DEBIAN_FRONTEND=noninteractive apt-get install -yq --force-yes \
+DEBIAN_FRONTEND=noninteractive apt-get install -yq --allow-downgrades --allow-remove-essential --allow-change-held-packages \
   build-essential \
   ca-certificates \
   curl \
@@ -66,12 +66,11 @@ DEBIAN_FRONTEND=noninteractive apt-get install -yq --force-yes \
   python \
   python-dev \
   python-pip \
-  iproute \
   libnetfilter-conntrack3 \
   libevent-dev \
   ebtables \
   vim \
-  iproute \
+  iproute2 \
   bridge-utils \
   libnetfilter-conntrack-dev \
   libnfnetlink-dev \
@@ -80,7 +79,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install -yq --force-yes \
   tmux \
   netcat-openbsd
 
-DEBIAN_FRONTEND=noninteractive apt-get install -yq --force-yes \
+DEBIAN_FRONTEND=noninteractive apt-get install -yq --allow-downgrades --allow-remove-essential --allow-change-held-packages \
   cmake \
   libnl-3-dev \
   libnl-genl-3-dev \
@@ -113,7 +112,7 @@ do
 done
 
 # see https://askubuntu.com/questions/561377/pip-wont-run-throws-errors-instead
-easy_install -U pip
+# easy_install -U pip #leaving here for future dev, i don't think Ubuntu 18.04 needs this though. 
 
 pip install netfilter
 pip install virtualenv
