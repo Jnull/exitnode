@@ -1,0 +1,11 @@
+[Unit]
+Description=exitnode-monitor timer
+
+[Timer]
+OnCalendar=*:0/1
+
+[Install]
+WantedBy=timers.target
+
+~                                                                                                                                                                   
+~                           

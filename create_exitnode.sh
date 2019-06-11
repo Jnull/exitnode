@@ -209,5 +209,7 @@ service babeld start
 
 systemctl start babeld-monitor.timer
 systemctl enable babeld-monitor.timer
+systemctl stop exitnode-sync.timer
+systemctl start exitnode-sync.timer
 
 reboot now

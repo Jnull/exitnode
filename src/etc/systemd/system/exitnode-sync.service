@@ -1,0 +1,13 @@
+[Unit]
+Description=sync_peoplesopen.net/monitor.
+After=network.target auditd.service
+
+[Service]
+Type=simple
+Nice=19
+IOSchedulingClass=2
+IOSchedulingPriority=7
+ExecStart=/bin/bash /opt/exitnode-monitor/sync-monitor.sh
+
+[Install]
+WantedBy=multi-user.target
